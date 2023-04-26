@@ -22,13 +22,18 @@ class Graph:
         self.print_on_screen(distance, first_edge)
 
     def print_on_screen(self, distance, first_edge):
+        out = open('output.txt','a')
+        out.write(f"Кратчайшие пути")
         print(f"Кратчайшие пути")
         for i in range(self.V):
             INF = float('inf')
             if (distance[i] == INF):
                 print(f"от вершины {str(first_edge)} к вершине {i}:   не существует")
+                out.write(f"от вершины {str(first_edge)} к вершине {i}:   не существует")
             elif (i != first_edge):
                 print(f"от вершины {str(first_edge)} к вершине {i}:   {distance[i]}")
+                out.write(f"от вершины {str(first_edge)} к вершине {i}:   {distance[i]}")
+        out.close()
         print()
 
 inp = open('input.txt', 'r')
