@@ -1,3 +1,6 @@
+"""
+https://habr.com/ru/articles/191454/
+"""
 def search_with_Knuth_Morris_Pratt(pattern, text):
 	M = len(pattern)
 	N = len(text)
