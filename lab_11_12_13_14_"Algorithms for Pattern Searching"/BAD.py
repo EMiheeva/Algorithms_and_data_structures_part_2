@@ -1,3 +1,6 @@
+"""
+https://habr.com/ru/articles/660767/
+"""
 alphabet = 256 
 def Bad_Heuristic(string, size):
 	bad_letter = [-1] * alphabet
