@@ -15,8 +15,7 @@ def Coloring(adjacency, N):
         for i in adjacency[u]: 
             if (result[i] != -1):
                 available_color[result[i]] = False
-    coloring = ["красный", "оранжевый", "желтый", "зеленый", "голубой", "синий", "фиолетовый"] #может случиться сбой, если цветов будет больше семи! Надо рефакторить
-    #эта идея хороша только если хроматическое число нестрого меньше 7
+    coloring = ["красный", "оранжевый", "желтый", "зеленый", "голубой", "синий", "фиолетовый"] #отличная идея, если хроматическое число нестрого меньше 7
     
     out = open('output_Coloring.txt', 'a')
     out.write(f"Раскраска графа\n")
@@ -74,14 +73,14 @@ for i in range(0, len(graph_from_inp)):
     for j in range(0, len(graph_from_inp[i])):
         if(graph_from_inp[i][j] != 0):
             neibour_edge[i].append(int(j))
-            neibour_edge[j].append(int(i))
+            neibour_edge[j].append(int(i))#дополнительное условие, чтобы можно было создать ориентированный граф
 
 print()
 print(f"В графе из input.txt {len(graph_from_inp)} вершин")
 print()
 
 for i in range(len(neibour_edge)):
-    print(f'Вершина {i} имеет соседей: {list(dict.fromkeys(neibour_edge[i]))}') #легко убедиться, что если граф ориентированный, то возникают дубликаты! потому надо от них избавиться
+    print(f'Вершина {i} имеет соседей: {list(dict.fromkeys(neibour_edge[i]))}') #если граф ориентированный, то мы наблюдаем, что возникают дубликаты!
 
 print()
 print("Раскраска графа:")
