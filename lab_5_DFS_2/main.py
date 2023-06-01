@@ -1,5 +1,6 @@
 # помогашка: https://www.programiz.com/dsa/strongly-connected-components
 # https://www.programiz.com/dsa/graph-dfs
+# сильная компонент связности не может состоять из одной вершины, как в примерах из ссылок
 from itertools import groupby
 from collections import Counter
 from collections import defaultdict
